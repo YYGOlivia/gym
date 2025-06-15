@@ -1,0 +1,77 @@
+21:51:45 : Connexion ¨¤ la base de donn¨¦es ¨¦tablie avec succ¨¨s.
+21:56:14 : Connexion ¨¤ la base de donn¨¦es ¨¦tablie avec succ¨¨s.
+22:01:24 : Capacit¨¦ suffisante dans parking001 la capacit¨¦ est de 58
+22:01:24 : Votre ID de reservation est vehicule43
+22:01:24 : reservation ok dans parking001
+22:03:10 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA001
+22:03:10 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A1, Nom: Dupont, Pr¨¦nom: Pierre
+22:03:10 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+22:03:43 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA005
+22:03:43 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:03:43 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A5, Nom: GOUBERT, Pr¨¦nom: Cl¨¦ment
+22:06:45 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA005
+22:06:45 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:06:45 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A5, Nom: GOUBERT, Pr¨¦nom: Cl¨¦ment
+22:06:57 : Le portique choisi est reserv¨¦ aux Employ¨¦s
+22:06:57 : Veuillez vous p¨¦senter au bon portique.
+22:07:47 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA005
+22:07:47 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:07:47 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A5, Nom: GOUBERT, Pr¨¦nom: Cl¨¦ment
+22:07:58 : Le portique choisi est reserv¨¦ aux Membres
+22:07:58 : Acc¨¨s autoris¨¦ au portique. 
+22:10:15 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA001
+22:10:15 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A1, Nom: Dupont, Pr¨¦nom: Pierre
+22:10:15 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+22:22:54 : Capacit¨¦ suffisante dans parking002 la capacit¨¦ est de 244
+22:22:54 : Votre ID de reservation est vehicule44
+22:22:54 : reservation ok dans parking002
+22:23:17 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteC001
+22:23:17 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:23:17 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : C1, Nom: Garcia, Pr¨¦nom: Luis
+22:24:06 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteC001
+22:24:06 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:24:06 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : C1, Nom: Garcia, Pr¨¦nom: Luis
+22:24:17 : Le portique choisi est reserv¨¦ aux Employ¨¦s
+22:24:17 : Acc¨¨s autoris¨¦ au portique. 
+22:26:40 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteC001
+22:26:40 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+22:26:40 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : C1, Nom: Garcia, Pr¨¦nom: Luis
+22:26:48 : Le portique choisi est reserv¨¦ aux Membres
+22:26:48 : Veuillez vous p¨¦senter au bon portique.
+22:57:48 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA002
+22:57:48 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+22:58:52 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA001
+22:58:52 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A1, Nom: Dupont, Pr¨¦nom: Pierre
+22:58:52 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+23:03:51 : Connexion ¨¤ la base de donn¨¦es ¨¦tablie avec succ¨¨s.
+23:04:07 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA002
+23:04:07 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+23:18:28 : Capacit¨¦ suffisante dans parking002 la capacit¨¦ est de 243
+23:18:28 : Votre ID de reservation est vehicule45
+23:18:28 : reservation ok dans parking002
+23:20:40 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA001
+23:20:40 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A1, Nom: Dupont, Pr¨¦nom: Pierre
+23:20:40 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+23:26:21 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA002
+23:26:21 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+23:27:21 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA008
+23:27:21 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+23:28:17 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA003
+23:28:17 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A3, Nom: Martin, Pr¨¦nom: Jean
+23:28:17 : Veuillez recharger votre compte. L'abonnement a expir¨¦.
+23:29:26 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA004
+23:29:26 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+23:29:26 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A4, Nom: go, Pr¨¦nom: sy
+23:29:43 : Le portique choisi est reserv¨¦ aux Membres
+23:29:43 : Acc¨¨s autoris¨¦ au portique. 
+23:36:33 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteC001
+23:36:33 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+23:36:33 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : C1, Nom: Garcia, Pr¨¦nom: Luis
+23:36:47 : Le portique choisi est reserv¨¦ aux Employ¨¦s
+23:36:47 : Acc¨¨s autoris¨¦ au portique. 
+08:29:28 : Connexion ¨¤ la base de donn¨¦es ¨¦tablie avec succ¨¨s.
+08:29:49 : Informations de carte trouv¨¦es avec succ¨¨s pour la personne. ID Carte : carteA005
+08:29:49 : Acc¨¨s autoris¨¦. L'abonnement est actif.
+08:29:49 : Votre carte correspond ¨¤ cet utilisateur, ID Personne : A5, Nom: GOUBERT, Pr¨¦nom: Cl¨¦ment
+08:30:03 : Le portique choisi est reserv¨¦ aux Membres
+08:30:03 : Acc¨¨s autoris¨¦ au portique. 

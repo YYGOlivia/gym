@@ -1,0 +1,86 @@
+import socket
+import sys
+import traceback
+import os
+
+class ServeurRx:
+    def __init__(self):
+        self.co = ConnexionBd()
+        self.ps = None
+        self.rs = None
+
+    def verif_info(self, num_billet):
+        try:
+            self.ps = self.co.connect_bd().prepare("select * from carte where id_carte = ?")
+            self.ps.setString(1, num_billet)
+            self.rs = self.ps.execute_query()
+            if self.rs.next():
+                return True
+quw\
+
+
+        except SQLException as e:
+            print(f"Erreur lors de la validation des données: {e}")
+        return False
+
+
+def main():
+    port = 64555
+    serveur = ServeurRx()
+
+    try:
+        server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server_socket.bind(('localhost', port))
+        server_socket.listen()
+
+        print(f"Serveur en attente sur le port {port}")
+
+        while True:
+            client_socket, addr = server_socket.accept()
+            print(f"Nouvelle connexion établie avec {addr}")
+
+            try:
+                reader = client_socket.makefile('r')
+                writer = client_socket.makefile('w')
+
+                while True:
+                    msg = reader.readline().strip()
+                    print(f"Client: {msg}")
+                    response = ''
+
+                    if msg == "Au revoir":
+                        response = "Fin de la connexion | Au revoir"
+                        writer.write(response + '\n')
+                        writer.flush()
+                        break
+
+                    elif not msg:
+                        response = "Fin de la connexion | Au revoir"
+                        writer.write(response + '\n')
+                        writer.flush()
+                        break
+
+                    elif serveur.verif_info(msg):
+                        response = f"Billet valide | Serveur : Message reçu : {msg}"
+                        writer.write(response + '\n')
+                        writer.flush()
+
+                    else:
+                        response = f"Billet non valide | Serveur : Message reçu : {msg}"
+                        writer.write(response + '\n')
+                        writer.flush()
+
+            except Exception as e:
+                traceback.print_exc(file=sys.stdout)
+            finally:
+                client_socket.close()
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        server_socket.close()
+
+
+if __name__ == "__main__":
+    main()
+

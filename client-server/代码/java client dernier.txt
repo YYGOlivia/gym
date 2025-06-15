@@ -1,0 +1,39 @@
+import java.io.*;
+import java.net.*;
+
+public class JavaClient {
+    public static void main(String[] args) {
+        String serveurHote = "10.40.59.165";
+        int serveurPort = 64554;
+
+        try {
+            // Création du socket client
+            Socket socketClient = new Socket(serveurHote, serveurPort);
+            System.out.println("Connecté au serveur : " + serveurHote + ":" + serveurPort);
+
+            // Création du flux d'entrée pour recevoir les messages du serveur
+            BufferedReader lecteur = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
+
+            // Création du flux de sortie pour envoyer des messages au serveur
+            BufferedWriter ecrivain = new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
+
+            // Envoi d'un message au serveur
+            String message = "Bonjour depuis le client Java";
+            ecrivain.write(message + "\n");
+            ecrivain.flush();
+            System.out.println("Message envoyé au serveur : " + message);
+
+            // Réception de la réponse du serveur
+            String reponse = lecteur.readLine();
+            System.out.println("Réponse du serveur reçue : " + reponse);
+
+            // Fermeture du socket et des flux
+            lecteur.close();
+            ecrivain.close();
+            socketClient.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

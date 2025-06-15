@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+void Fusionner(int indinf, int indmil, int indsup, int tab[]) {
+    int n1 = indmil - indinf + 1;
+    int n2 = indsup - indmil;
+
+    int tab1[n1];
+    int tab2[n2];
+
+    for (int i = 0; i < n1; i++) {
+        tab1[i] = tab[indinf + i];
+    }
+
+    for (int i = 0; i < n2; i++) {
+        tab2[i] = tab[indmil + 1 + i];
+    }
+
+    int i = 0, j = 0, k = indinf;
+
+    while (i < n1 && j < n2) {
+        if (tab1[i] <= tab2[j]) {
+            tab[k] = tab1[i];
+            i++;
+        } else {
+            tab[k] = tab2[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        tab[k] = tab1[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        tab[k] = tab2[j];
+        j++;
+        k++;
+    }
+}
+
+int main() {
+    int tab[] = {12, 11, 13, 5, 6, 7};
+    int tabSize = sizeof(tab) / sizeof(tab[0]);
+
+    printf("Original array: ");
+    for (int i = 0; i < tabSize; i++) {
+        printf("%d ", tab[i]);
+    }
+
+    Fusionner(0, 2, 5, tab); // 0, 2, 5 是数组索引范围
+
+    printf("\nMerged array: ");
+    for (int i = 0; i < tabSize; i++) {
+        printf("%d ", tab[i]);
+    }
+
+    return 0;
+}

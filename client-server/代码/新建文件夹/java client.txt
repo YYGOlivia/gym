@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ClientTx {
+    public static void main(String[] args) {
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter the server's IP address (if localhost: 127.0.0.1): ");
+            String host = scanner.nextLine();
+
+            System.out.print("Enter the port number: (64555): ");
+            int port = Integer.parseInt(scanner.nextLine());
+
+            int timeout = 10;
+
+            try (Socket socket = new Socket(host, port);
+                 PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+                 BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+                System.out.print("Enter the ticket number: ");
+                String ticketNumber = scanner.nextLine();
+                String data = ticketNumber + "\n";
+
+                writer.println(data);
+
+                System.out.println("Data sent to the server.");
+
+                String response = reader.readLine().trim();
+
+                System.out.println("Server: " + response);
+            }
+
+        } catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
