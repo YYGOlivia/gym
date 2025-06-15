@@ -1,0 +1,109 @@
+INSERT INTO Carte (id_carte, type_carte, date_achat, date_expiration)
+VALUES
+    ('carteA001', 'Membre' , '2022-01-01', '2023-01-01'),
+    ('carteA002', 'Membre' , '2022-03-01', '2023-03-01'),
+    ('carteA003', 'Membre' , '2022-05-01', '2022-05-01'),
+    ('carteB001', 'Employé', '2022-07-01', '2030-01-01'),
+    ('carteB002', 'Employé', '2022-09-01', '2030-01-01'),
+    ('carteC001', 'Employé', '2022-09-01', '2030-01-01'),
+    ('carteD001', 'Employé', '2022-09-01', '2030-01-01');
+
+
+
+
+INSERT INTO Personne (id_personne, nom, prenom, sexe, num_téléphone, adress_mail, login, mot_de_passe, id_carte)
+VALUES
+    ('A1', 'Dupont', 'Pierre', 'M', '0123456789', 'pierre@gmail.com', 'Pierre1234', 'Pierre@1#2', 'carteA001'),
+    ('A2', 'Dubois', 'Marie', 'F', '9876543210', 'marie@yahoo.com', 'Marie5678', 'Marie@3$4','carteA002' ),
+    ('A3', 'Martin', 'Jean', 'M', '0123456789', 'jean@outlook.com', 'Jean9999', 'Jean@5%6', 'carteA003'),
+    ('B1', 'Lefebvre', 'Sophie', 'F', '9876543210', 'sophie@gmail.com', 'Sophie8888', 'Sophie@7&8', 'carteB001'),
+    ('B2', 'Leclerc', 'Luc', 'M', '0123456789', 'luc@yahoo.com', 'Luc6666', 'Luc@9*0', 'carteC001'),
+    ('C1', 'Garcia', 'Luis', 'M', '0123456789', 'luis@gmail.com', 'Luis1234', 'Luis@1#2', 'carteA002'),
+    ('D1', 'Lopez', 'Maria', 'F', '9876543210', 'maria@yahoo.com', 'Maria5678', 'Maria@3$4', 'carteD001');
+
+
+INSERT INTO Membre (id_membre,type_abonnement)
+VALUES ('A1','Classique'), ('A2', 'premium'), ('A3','famille');
+
+INSERT INTO Employe (id_employe, poste)
+VALUES  ('B1', 'coach'), ('B2', 'coach'),  ('C1', 'accueil'), ('D1', 'gardien');
+
+INSERT INTO Salle (id_salle, nom_salle,date_fondation,adress_salle)
+VALUES
+    ('salle001', 'Salle A', '2022-03-15', '123 Main St, City A'),
+    ('salle002', 'Salle B', '2022-05-20', '456 Elm St, Town B'),
+    ('salle003', 'Salle C', '2022-07-10', '789 Oak St, Village C');
+
+
+INSERT INTO Cours (id_cours, nom_cours, heure_début, heure_fin, type_cours, id_salle, id_employe)
+VALUES
+    ('cours001', 'Yoga', '08:30', '10:00', 'Yoga', 'salle001', 'B1'),
+    ('cours002', 'Musculation', '10:00', '11:30', 'musculation', 'salle001', 'B1'),
+    ('cours003', 'Cardio', '14:00', '15:30', 'cardio', 'salle001', 'B1'),
+    ('cours004', 'Boxe', '16:00', '17:30', 'Boxe', 'salle002', 'B2'),
+    ('cours005', 'Pilates', '18:30', '20:00', 'Pilates', 'salle002', 'B2');
+    ('cours006', 'Zumba', '10:00', '12:00', 'Zumba', 'salle003', 'B2');
+    ('cours007', 'Powerlifting', '10:00, '12:00', 'Powerlifting', 'salle003', 'B1');
+    ('cours008', 'Cardio', '16:00', '17:30', 'cardio', 'salle003', 'B1')
+    ('cours009', 'Cardio', '14:00', '15:30', 'cardio', 'salle002', 'B1'),
+
+    
+
+
+
+INSERT INTO Reservation (id_reservation, date_début, date_fin, id_membre, id_cours)
+VALUES
+    ('reser1', '2022-01-02', '2023-12-31', 'A1', 'cours001'),
+    ('reser2', '2022-03-05', '2023-12-31', 'A2', 'cours002'),
+    ('reser3', '2022-05-07', '2023-12-31', 'A3', 'cours003'),
+    ('reser4', '2022-07-09', '2023-12-31', 'A3', 'cours003'),
+    ('reser5', '2022-09-11', '2023-12-31', 'A1', 'cours005');
+
+
+
+INSERT INTO Equipement (id_equipement, nom_equipement, état, date_achat, id_salle)
+VALUES
+    ('equipement001', 'Tapis de course', 'disponible', '2022-02-01', 'salle001'),
+    ('equipement002', 'Haltères', 'disponible', '2022-03-15', 'salle001'),
+    ('equipement003', 'Vélo elliptique', 'disponible', '2022-04-20', 'salle001'),
+    ('equipement004', 'Rameur', 'disponible', '2022-05-10', 'salle002'),
+    ('equipement005', 'Banc de musculation', 'disponible', '2022-06-05', 'salle002');
+
+
+INSERT INTO Parking (id_parking, capacite)
+VALUES
+    ('parking001', 100),
+    ('parking002', 250),
+    ('parking003', 100);
+
+
+INSERT INTO Vehicule(id_vehicule, type_vehicule,id_parking)
+VALUES
+    ('vehicule001','voiture','parking001'),
+    ('vehicule002','moto', 'parking002'),
+    ('vehicule003','moto', 'parking003'),
+    ('vehicule004','voiture','parking001'),
+    ('vehicule005','voiture','parking002');
+
+
+INSERT INTO Portique (id_portique,type_portique,adress_portique, état, id_parking, id_salle)
+VALUES
+    ('portiqueA1', 'Mixte', 'Parking ', 'Marche', 'parking001', NULL),
+    ('portiqueA2', 'Membre', 'Salle', 'Marche', NULL, 'salle001'),
+    ('portiqueA3', 'Employé', 'Salle', 'Marche', NULL, 'salle001'),
+    ('portiqueB1', 'Mixte', 'Parking ', 'Marche', 'parking002', NULL),
+    ('portiqueB2', 'Membre', 'Salle', 'Marche', NULL, 'salle002'),
+    ('portiqueB3', 'Employé', 'Salle', 'Marche', NULL, 'salle002'),
+    ('portiqueC1', 'Mixte', 'Parking ', 'Marche', 'parking003', NULL),
+    ('portiqueC2', 'Membre', 'Salle', 'Marche', NULL, 'salle003'),
+    ('portiqueC3', 'Employé', 'Salle', 'Marche', NULL, 'salle003')
+
+
+
+INSERT INTO Scanne (id_portique, id_carte)
+VALUES
+    ('portiqueA1', 'carteA001'),
+    ('portiqueA2', 'carteB001'),
+    ('portiqueB2', 'carteA002'),
+    ('portiqueB2', 'carteB002'),
+    ('portiqueB2', 'carteC001');

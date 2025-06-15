@@ -1,0 +1,31 @@
+-- Supprimer les enregistrements de 'carteA004' dans la table Scanne
+DELETE FROM Scanne WHERE id_carte = 'carteA004';
+
+-- Supprimer les enregistrements de 'véhicule' dans la table Véhicule
+DELETE FROM Véhicule WHERE id_véhicule = 'véhicule';
+
+-- Supprimer les enregistrements de 'A4' dans la table Abonnement
+DELETE FROM Abonnement WHERE id_membre = 'A4';
+
+-- Supprimer les enregistrements de 'A4' dans la table Membre
+DELETE FROM Membre WHERE id_membre = 'A4';
+
+-- Mettre à jour les enregistrements de 'A4' dans la table Personne en définissant id_carte à NULL
+UPDATE Personne SET id_carte = NULL WHERE id_personne = 'A4';
+
+-- Supprimer les enregistrements de 'carteA004' dans la table Carte
+DELETE FROM Carte WHERE id_carte = 'carteA004';
+
+-- Supprimer les enregistrements de 'A4' dans la table Personne
+DELETE FROM Personne WHERE id_personne = 'A4';
+
+DROP TABLE IF EXISTS equipement;
+DROP TABLE IF EXISTS reservation;
+DROP TABLE IF EXISTS cours;
+DROP TABLE IF EXISTS salle;
+DROP TABLE IF EXISTS employe;
+DROP TABLE IF EXISTS membre;
+DROP TABLE IF EXISTS personne;
+DROP TABLE IF EXISTS carte;
+
+

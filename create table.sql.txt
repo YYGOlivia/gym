@@ -1,0 +1,123 @@
+-- table Carte 
+CREATE TABLE Carte (
+    id_carte VARCHAR(20) PRIMARY KEY,
+    type_carte VARCHAR(20) NOT NULL，
+    date_achat DATE NOT NULL CHECK(date_achat >= '2022-01-01' AND date_achat <= '2023-12-31'),
+    date_expiration DATE CHECK(date_expiration >= '2022-01-01'),
+    CONSTRAINT check_type_carte CHECK (type_carte IN ('Membre', 'Employé'))
+);
+
+--  table Personne 
+CREATE TABLE Personne (
+    id_personne VARCHAR(9) PRIMARY KEY,
+    nom VARCHAR(30) NOT NULL,
+    prénom VARCHAR(30) NOT NULL,
+    sexe CHAR(1) NOT NULL,
+    num_téléphone CHAR(10) NOT NULL,
+    adress_mail VARCHAR(30) NOT NULL,
+    login VARCHAR(20) NOT NULL,
+    mot_de_passe VARCHAR(20) NOT NULL,
+    id_carte VARCHAR(20),
+    FOREIGN KEY (id_carte) REFERENCES Carte(id_carte)
+);
+
+--  Créer une table Membre, héritée de Personne
+CREATE TABLE Membre (
+    id_membre VARCHAR(9) NOT NULL,
+    type_abonnement VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id_membre),
+    FOREIGN KEY (id_membre) REFERENCES Personne(id_personne),
+    CONSTRAINT check_type_abonnement CHECK (type_membre IN ('Classique', 'premium', 'famille'))
+);
+
+-- Créer une table Employé, héritée de Personne
+CREATE TABLE Employe (
+    id_employe VARCHAR(9) NOT NULL,
+    poste VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id_employé),
+    FOREIGN KEY (id_employé) REFERENCES Personne(id_personne)
+);
+
+-- table Salle 
+CREATE TABLE Salle (
+    id_salle CHAR(8) PRIMARY KEY,
+    nom_salle VARCHAR(30) NOT NULL,
+    adress_salle VARCHAR(100) NOT ULL,
+    date_fondation DATE NOT NULL CHECK(date_fondation >= '2022-01-01' AND date_fondation <= '2023-12-31')
+);
+
+-- table Cours
+CREATE TABLE Cours (
+    id_cours CHAR(8) PRIMARY KEY,
+    nom_cours VARCHAR(30) NOT NULL,
+    heure_début TIME NOT NULL CHECK(heure_début >= '08:00:00' AND heure_début <= '20:00:00'),
+    heure_fin TIME NOT NULL CHECK(heure_fin >= '10:00:00' AND heure_fin <= '22:00:00'),
+    type_cours VARCHAR(20) NOT NULL,
+    id_salle CHAR(8),
+    id_employe VARCHAR(9),
+    FOREIGN KEY (id_salle) REFERENCES Salle(id_salle),
+    FOREIGN KEY (id_employé) REFERENCES Employé(id_employé)
+);
+
+
+-- table Reservation
+CREATE TABLE Reservation (
+    id_reservation CHAR(13) PRIMARY KEY,
+    date_début DATE NOT NULL CHECK(date_début >= '2022-01-01' AND date_début <= '2023-12-31'),
+    date_fin DATE NOT NULL CHECK(date_fin >= '2022-01-01' AND date_fin <= '2023-12-31'),
+    id_membre VARCHAR(9),
+    id_cours CHAR(8),
+    FOREIGN KEY (id_membre) REFERENCES Membre(id_membre),
+    FOREIGN KEY (id_cours) REFERENCES Cours(id_cours)
+);
+ 
+
+
+--  table Equipement 
+CREATE TABLE Equipement (
+    id_equipement CHAR(13) PRIMARY KEY,
+    nom_equipement VARCHAR(30) NOT NULL,
+    état VARCHAR(20) NOT NULL,
+    date_achat DATE NOT NULL CHECK(date_achat >= '2022-01-01' AND date_achat <= '2023-12-31'),
+    id_salle CHAR(8),
+    FOREIGN KEY (id_salle) REFERENCES Salle(id_salle)
+);
+
+
+-- table Parking 
+CREATE TABLE Parking (
+    id_parking CHAR(11) PRIMARY KEY,
+    capacite INTEGER NOT NULL,
+    CHECK (capacite >= 0)
+);
+
+-- table Véhicule
+CREATE TABLE Vehicule (
+    id_vehicule CHAR(11) PRIMARY KEY,
+    type_vehicule VARCHAR(20) NOT NULL,
+    id_parking CHAR(11) REFERENCES Parking(id_parking),
+    CONSTRAINT check_type_véhicule CHECK (type_véhicule IN ('voiture', 'moto'))
+);
+
+-- table Portique 
+CREATE TABLE Portique (
+    id_portique CHAR(10) PRIMARY KEY,
+    type_portique VARCHAR(20) NOT NULL,
+    adress_portique VARCHAR(40) NOT NULL,
+    état VARCHAR(20) NOT NULL,
+    id_parking CHAR(11),
+    id_salle CHAR(8),
+    FOREIGN KEY (id_parking) REFERENCES Parking(id_parking),
+    FOREIGN KEY (id_salle) REFERENCES Salle(id_salle),
+    CONSTRAINT check_type_portique CHECK (type_portique IN ('Employé', 'Membre','Mixte'))
+);
+
+
+
+-- table Scanne
+CREATE TABLE Scanne (
+    id_portique CHAR(10),
+    id_carte CHAR(9),
+    FOREIGN KEY (id_portique) REFERENCES Portique(id_portique),
+    FOREIGN KEY (id_carte) REFERENCES Carte(id_carte)
+);
